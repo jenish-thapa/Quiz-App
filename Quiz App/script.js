@@ -104,7 +104,7 @@ let progress = document.querySelector("#progress");
 let progress_label = document.querySelector("#progress_label");
 let choices = document.querySelectorAll(".choice");
 let timerDisplay = document.querySelector("#timer_box");
-let timeLeft = 6;
+let timeLeft = 16;
 const shuffledList = shuffle(questions);
 const progress_coeff = 194 / questions.length;
 
@@ -113,10 +113,16 @@ function countdown() {
     timeLeft--;
     timerDisplay.innerText = `Time Left: ${timeLeft}s`;
   } else {
-    clearInterval();
     timerDisplay.innerText = `Time's Up!`;
+    choices.forEach((choice) => (choice.disabled = true));
+    resetTimer();
     loadNextQuestion();
   }
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  timeLeft = 16;
 }
 
 function startTimer() {
@@ -127,8 +133,8 @@ function startTimer() {
 let timerInterval = startTimer();
 
 function displayQuestion(index) {
-  clearInterval(timerInterval);
-  timeLeft = 6;
+  console.log(timeLeft);
+  resetTimer();
   timerInterval = startTimer();
   progress.style.width = `${progress_coeff * (index + 1)}px`;
   progress_label.innerText = `Question ${index + 1}/${questions.length}`;
@@ -147,17 +153,16 @@ function resetChoices() {
 }
 
 function loadNextQuestion() {
-    setTimeout(() => {
-      index++;
-      if (index < shuffledList.length) {
-        resetChoices();
-        displayQuestion(index);
-        ableToSelect = true;
-      } else {
-        localStorage.setItem("quizScore", score);
-        window.location.replace("end.html");
-      }
-    }, 2000);
+  setTimeout(() => {
+    index++;
+    if (index < shuffledList.length) {
+      resetChoices();
+      displayQuestion(index);
+    } else {
+      localStorage.setItem("quizScore", score);
+      window.location.replace("end.html");
+    }
+  }, 2000);
 }
 
 displayQuestion(index);
