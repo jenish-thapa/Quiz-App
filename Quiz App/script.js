@@ -23,6 +23,64 @@ let questions = [
     choice4: "<! Comment>",
     answer: 2,
   },
+  {
+    question: "Which HTML tag is used to create a hyperlink?",
+    choice1: "<link>",
+    choice2: "<a>",
+    choice3: "<href>",
+    choice4: "<hyperlink>",
+    answer: 2,
+  },
+  {
+    question:
+      "Which CSS property is used to control the spacing between lines of text?",
+    choice1: "line-height",
+    choice2: "letter-spacing",
+    choice3: "text-spacing",
+    choice4: "line-spacing",
+    answer: 1,
+  },
+  {
+    question:
+      "Which of the following is the correct way to apply an external JavaScript file to an HTML document?",
+    choice1: "<script src='script.js'></script>",
+    choice2: "<script href='script.js'></script>",
+    choice3: "<js src='script.js'></js>",
+    choice4: "<link rel='javascript' href='script.js'>",
+    answer: 1,
+  },
+  {
+    question: "Which CSS property is used to specify the radius of a border?",
+    choice1: "border-radius",
+    choice2: "border-style",
+    choice3: "border-width",
+    choice4: "border-radius-style",
+    answer: 1,
+  },
+  {
+    question: "Which HTML tag is used to define a table row?",
+    choice1: "<row>",
+    choice2: "<tr>",
+    choice3: "<td>",
+    choice4: "<table-row>",
+    answer: 2,
+  },
+  {
+    question: "What does CSS stand for?",
+    choice1: "Computer Style Sheets",
+    choice2: "Cascading Style Sheets",
+    choice3: "Colorful Style Sheets",
+    choice4: "Creative Style Sheets",
+    answer: 2,
+  },
+  {
+    question: "Which HTML tag is used to define a form input element?",
+    choice1: "<input>",
+    choice2: "<form>",
+    choice3: "<submit>",
+    choice4: "<button>",
+    answer: 1,
+  },
 ];
 
 function shuffle(list) {
